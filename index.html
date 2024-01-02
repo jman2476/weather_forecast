@@ -4,8 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grand Bucket of Weather</title>
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
-    
+    <header class="text-center">
+        <h2>Jeremy's Weather Station</h2>
+    </header>
+
+    <!-- Sidebar that will contain search history and  -->
+    <div id="search" class="text-center">   
+        <h3>Search up some weather!</h3>
+        <input type="text" id="city-search" placeholder="Enter a city">
+        <button>Search weather</button>
+    </div>
+
+    <main>
+        <!-- This is where the current and future weather will get injected -->
+        <p>example</p>
+        <div id="current-weather"></div>
+        <div id="future-weather"></div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/script.js"></script>
 </body>
 </html>
