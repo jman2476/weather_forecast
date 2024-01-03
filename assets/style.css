@@ -1,0 +1,32 @@
+* {
+    font-family: sans-serif;
+}
+
+.row, .column{
+    display: flex;
+}
+
+.column{
+    flex-direction: column;
+}
+.text-center {
+    text-align: center;
+}
+
+#search {
+    height: 100%;
+    width: 25%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #b00b1355;
+    padding: 0 5px 0;
+}
+
+main {
+    background-color: greenyellow;
+    width: 75%;
+    position: fixed;
+    left: 26%
+}
