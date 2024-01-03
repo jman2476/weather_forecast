@@ -27,12 +27,12 @@ $(function () {
 
         
         // check that current city is not in search history
-        if (!history.includes(cityName)) {
+        if (!history.includes(cityName.toLowerCase())) {
             $('#search').append(`<button id="history">${cityName}</button>`)
             // add city name to history array
-            history.push(cityName)
+            history.push(cityName.toLowerCase())
             // push the history array back to local storage
-            localStorage.setItem('weather history', history);
+            localStorage.setItem('weather history', JSON.stringify(history));
         }
 
         // call the server to get forecast data
