@@ -9,6 +9,7 @@
 .column{
     flex-direction: column;
 }
+
 .text-center {
     text-align: center;
 }
@@ -29,4 +30,20 @@ main {
     width: 75%;
     position: fixed;
     left: 26%
+}
+
+#search-btn {
+    margin: 0 0 10px;
+}
+
+.spin {
+    position: fixed;
+    height: 40px;
+    width: 60px;
+    z-index: 1;
+    top: 10px;
+    right: 10px;
+    border-radius: 12px;
+    background-color: #b00baa;
+    color: whitesmoke;
 }
