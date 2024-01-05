@@ -51,11 +51,30 @@
 
     // disect forecast weather data object, and populate the page with the information
     function forecastWeather(weatherObj){
-        var date
-        var icon
-        var temperature
-        var humidity
-        var windSpeed
+        console.log(weatherObj)
+        $('#future-weather').empty();
+        // populate five days of forecast data
+        for(var index = 0; index < weatherObj.list.length; index++){
+            console.log(weatherObj.list[index].dt_txt)
+            if(weatherObj.list[index].dt_txt.includes('12:00')){
+            var date = weatherObj.list[index].dt_txt.slice(0,10)
+            var iconID = weatherObj.list[index].weather[0].icon
+            var iconUrl = `http://openweathermap.org/img/wn/${iconID}@2x.png`
+            var description = weatherObj.list[index].weather[0].description;
+            var temperature = Math.round(weatherObj.list[index].main.temp - 273)
+            var humidity = weatherObj.list[index].main.humidity
+            var windSpeed = weatherObj.list[index].wind.speed
+
+            //empty the current weather div
+        $('#future-weather').append(`<div class="card">
+        <h3>${date}</h3>
+        <img src=${iconUrl} alt=${description}>
+        <p>Temperature: ${temperature} &#176;C</p>
+        <p>Humidity: ${humidity}%</p>
+        <p>Wind speed: ${windSpeed} m/s</p>
+        </div>`)
+        }  
+        }
     }
 
     // Function to search up the weather
@@ -110,14 +129,14 @@
     function spinME () {
         if (!spin) { // if it's not spinning, change that
             // add class to make things spin
-            $("body > :not(header) > *").addClass('fa-spin')
-            $("main, div").addClass('fa-spin')
+            $("*").addClass('fa-spin')
+            // remove spin class from unneccesary things so the spin button can be clicked to stop nausea
+            $("html, head, body, header").removeClass('fa-spin')
             // toggle spin boolean
             spin = true;
         } else{
             // remove class that makes things spin
-            $("body > :not(header) > *").removeClass('fa-spin')
-            $("main, div").removeClass('fa-spin')
+            $("*").removeClass('fa-spin')
             // toggle spin boolean
             spin = false;
         }
