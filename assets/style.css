@@ -9,8 +9,17 @@
 .column{
     flex-direction: column;
 }
+
 .text-center {
     text-align: center;
+}
+
+.card {
+    background-color: rgba(250, 235, 215, 0.493);
+    color: rgb(75, 43, 1);
+    padding: 5px;
+    margin: 0 1px 0;
+    border-radius: 40px;
 }
 
 #search {
@@ -24,9 +33,30 @@
     padding: 0 5px 0;
 }
 
+#future-weather {
+    background-color: lightcoral;
+
+}
+
 main {
     background-color: greenyellow;
     width: 75%;
     position: fixed;
     left: 26%
+}
+
+#search-btn {
+    margin: 0 0 10px;
+}
+
+.spin {
+    position: fixed;
+    height: 40px;
+    width: 60px;
+    z-index: 1;
+    top: 10px;
+    right: 10px;
+    border-radius: 12px;
+    background-color: #b00baa;
+    color: whitesmoke;
 }
